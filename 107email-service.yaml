@@ -23,6 +23,6 @@ spec:
         - name: GMAIL_PASS
           value: ilovedocker1!
         - name: SERVICE_NAME
-          value: "Example Project"          
+          value: "Login Servic"          
         ports:
         - containerPort: 3000

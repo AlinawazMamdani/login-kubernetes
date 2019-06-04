@@ -19,6 +19,6 @@ spec:
         image: docker.io/alinawazmamdani/authentication-service
         env: 
         - name: ACTIVATION_LINK
-          value: http://35.228.37.102/authentication/api/activate
+          value: http://35.228.50.149//authentication/api/activate
         ports:
         - containerPort: 3000
