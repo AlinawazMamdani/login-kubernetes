@@ -1,10 +1,10 @@
 kubectl --record deployment.apps/authentication-client set image deployment.v1.apps/authentication-client authentication-client=docker.io/alinawazmamdani/authentication-client:v${BUILD_NUMBER}
 kubectl --record deployment.apps/authentication-service set image deployment.v1.apps/authentication-service authentication-service=docker.io/alinawazmamdani/authentication-service:v${BUILD_NUMBER}
-kubectl --record deployment.apps/dashboard-cleint set image deployment.v1.apps/dashboard-client dashboard-client=docker.io/alinawazmamdani/dashboard-client:v${BUILD_NUMBER}
+kubectl --record deployment.apps/dashboard-client set image deployment.v1.apps/dashboard-client dashboard-client=docker.io/alinawazmamdani/dashboard-client:v${BUILD_NUMBER}
 kubectl --record deployment.apps/dashboard-service set image deployment.v1.apps/dashboard-service dashboard-service=docker.io/alinawazmamdani/dashboard-service:v${BUILD_NUMBER}
 kubectl --record deployment.apps/role-service set image deployment.v1.apps/role-service role-service=docker.io/alinawazmamdani/role-service:v${BUILD_NUMBER}
 kubectl --record deployment.apps/group-service set image deployment.v1.apps/group-service group-service=docker.io/alinawazmamdani/role-service:v${BUILD_NUMBER}
-kubectl --record deployment.apps/session-token-service set image deployment.v1.apps/ session-token-service=docker.io/alinawazmamdani/session-token-service:v${BUILD_NUMBER}
+kubectl --record deployment.apps/session-token-service set image deployment.v1.apps/session-token-service session-token-service=docker.io/alinawazmamdani/session-token-service:v${BUILD_NUMBER}
 kubectl --record deployment.apps/account-service set image deployment.v1.apps/account-service account-service=docker.io/alinawazmamdani/account-service:v${BUILD_NUMBER}
 kubectl --record deployment.apps/email-service set image deployment.v1.apps/email-service email-service=docker.io/alinawazmamdani/email-service:v${BUILD_NUMBER}
 kubectl --record deployment.apps/aes-encryption-service set image deployment.v1.apps/aes-encryption-service aes-encryption-service=docker.io/alinawazmamdani/aes-encryption-service:v${BUILD_NUMBER}
