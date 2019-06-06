@@ -80,6 +80,8 @@ Next steps will detail how to give permissions to allow jenkins to use docker
  6. exit the session and ssh back in and run 
  
  `docker restart (containerID)`
+ #### Jenkins pipeline
+ ![Diagram](https://github.com/AlinawazMamdani/login-kubernetes/blob/master/pipeline.png)
 ### Part 6 - Setup jenkins job
 Now we need to create a jenkins job in order to update the project everytime a update is made in any of the microservices
 1. Create a new jenkins freestyle job
