@@ -88,4 +88,8 @@ Now we need to create a jenkins job in order to update the project everytime a u
 `docker-compose build`
 
 `docker compose push`
-4. Now for each service that needs to be updated we need to an additional link to the coede
+4. Now for each service that needs to be updated we need to an additional link to the code
+
+`kubectl --record deployment.apps/[SERVICE_NAME] set image deployment.v1.apps/[SERVICE_NAME] [SERVICE_NAME]=docker.io/[YOUR_USERNAME]/[SERVICE_NAME]:v${BUILD_NUMBER}`
+
+replicate this line for each of the services and clients along replacing [YOUR_USERNAME] with your docker id and [SERVICE_NAME] with each of the clients and services.
