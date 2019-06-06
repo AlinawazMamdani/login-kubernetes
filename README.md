@@ -30,5 +30,6 @@ With the files obtained in the prerquisites we need to make some changes before 
 3. replace all instances of alinawazmamdani with your own dockerhub username. The quickest way of doing this is to run the following command 
 
 `:%s/alinawazmamdani/YOUR_USERNAME/g`
+
 4. Then push this project to your own git repo
 ### Part 3 - 
