@@ -67,6 +67,7 @@ Next steps will detail how to give permissions to allow jenkins to use docker
 3. we need to record the containerID and node given by this command
 4. View your cloud instances on the GCP platform and ssh into the vm which nodeip corresponds to the ip recorded previously
 5. we need to enter the jenkins container as the root user to add permissions this is done by the following commands
+
  `docker exec -it -u root (containerID) bash`
  
   `groupdel docker`
@@ -79,3 +80,12 @@ Next steps will detail how to give permissions to allow jenkins to use docker
  6. exit the session and ssh back in and run 
  
  `docker restart (containerID)`
+### Part 6 - Setup jenkins job
+Now we need to create a jenkins job in order to update the project everytime a update is made in any of the microservices
+1. Create a new jenkins freestyle job
+2. Setup source control given the link to the github containing the microservices
+3. add post build actions
+`docker-compose build`
+
+`docker compose push`
+4. Now for each service that needs to be updated we need to an additional link to the coede
