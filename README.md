@@ -94,3 +94,9 @@ Now we need to create a jenkins job in order to update the project everytime a u
 `kubectl --record deployment.apps/[SERVICE_NAME] set image deployment.v1.apps/[SERVICE_NAME] [SERVICE_NAME]=docker.io/[YOUR_USERNAME]/[SERVICE_NAME]:v${BUILD_NUMBER}`
 
 replicate this line for each of the services and clients along replacing [YOUR_USERNAME] with your docker id and [SERVICE_NAME] with each of the clients and services.
+
+
+## Common issues
+
+### Jenkins crumb issues
+The issue will persist until you have enabled proxy compatability successfully keep retrying until the setting is enabled.
