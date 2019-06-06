@@ -32,4 +32,31 @@ With the files obtained in the prerquisites we need to make some changes before 
 `:%s/alinawazmamdani/YOUR_USERNAME/g`
 
 4. Then push this project to your own git repo
-### Part 3 - 
+
+### Part 3 - Setting up kubernetes files 
+Changes will have to made to the deployments folder in each file the image needs to be changed so that it references your own docker repository
+
+1. Once all deployments refer to your own docker repo some changes need to be made to the files
+2. Email-service needs to be updated with a new email and password in the environment variables part of the deployment
+3. For the next change we need to run the services in order to get the IP of the gateway to do this navigate to the services folder and run the following commands
+
+`kubectl apply -f .`
+
+This command runs all the services that allows the deployments to be connected to following this run 
+
+`kubectl get services`
+
+The external IP address should now be visible copy this 
+4. Navigate to the deployments folder and open the authentication service replace the IP in the environment variables section with the coppied version
+5. run `kubectl apply -f .` in the deployments folder, this runs all the deployments that will now communicate through the services previously deployed
+6. Push this repo to your github
+
+### Part 4 - Jenkins
+Next we will deploy jenkins to manage the continous integration aspect of this project.
+1. First navigate to the jenkins folder similarly we need to deploy all the files run `kubectl apply -f .`
+2. Connect to the ip given by `kubectl get services` at port 8080 
+3. Run `kubectl get pods` followed by `kubectl logs jenkins~` where jenkins~ is the full name shown in the first command
+4.This should provide the initial admin password needed for jenkins
+5. Continue setup as normal
+6. click manage jenkins and global security then enable proxy compatability
+
