@@ -19,4 +19,5 @@ The diagram above shows how each service connects to each other once they have b
 1. Firstly create a project on google cloud platform
 2. Enter the cloudshell located in the top right 
 3. Next we need to create the cluster for all the application to be deployed on the command below will show you how to do this, region parameter may be changed but nodes must be at least 2
+
 `gcloud container clusters create examplename --region europe-north1 --num-nodes=2`
