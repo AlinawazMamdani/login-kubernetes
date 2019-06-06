@@ -67,15 +67,15 @@ Next steps will detail how to give permissions to allow jenkins to use docker
 3. we need to record the containerID and node given by this command
 4. View your cloud instances on the GCP platform and ssh into the vm which nodeip corresponds to the ip recorded previously
 5. we need to enter the jenkins container as the root user to add permissions this is done by the following commands
- `docker exec -it -u root (containerID) bash
+ `docker exec -it -u root (containerID) bash`
  
-  groupdel docker
+  `groupdel docker`
   
-  groupadd -g 412 docker
+  `groupadd -g 412 docker`
   
-  usermod -aG docker jenkins
+  `usermod -aG docker jenkins`
   
-  `
+  
  6. exit the session and ssh back in and run 
  
  `docker restart (containerID)`
