@@ -51,7 +51,7 @@ The external IP address should now be visible copy this
 5. run `kubectl apply -f .` in the deployments folder, this runs all the deployments that will now communicate through the services previously deployed
 6. Push this repo to your github
 
-### Part 4 - Jenkins
+### Part 4 - Jenkins inital setup
 Next we will deploy jenkins to manage the continous integration aspect of this project.
 1. First navigate to the jenkins folder similarly we need to deploy all the files run `kubectl apply -f .`
 2. Connect to the ip given by `kubectl get services` at port 8080 
@@ -60,3 +60,17 @@ Next we will deploy jenkins to manage the continous integration aspect of this p
 5. Continue setup as normal
 6. click manage jenkins and global security then enable proxy compatability
 
+### Part 5 - Jenkins docker setup
+Next steps will detail how to give permissions to allow jenkins to use docker
+1. In the cloud shell run `kubectl get pods`
+2. describe the jenkins pod using the name given with `kubectl describe pod (jenkins)`
+3. we need to record the containerID and node given by this command
+4. View your cloud instances on the GCP platform and ssh into the vm which nodeip corresponds to the ip recorded previously
+5. we need to enter the jenkins container as the root user to add permissions this is done by the following commands
+ `docker exec -it -u root (containerID) bash
+  groupdel docker
+  groupadd -g 412 docker
+  usermod -aG docker jenkins
+  `
+ 6. exit the session and ssh back in and run 
+ `docker restart (containerID)`
