@@ -21,3 +21,12 @@ The diagram above shows how each service connects to each other once they have b
 3. Next we need to create the cluster for all the application to be deployed on the command below will show you how to do this, region parameter may be changed but nodes must be at least 2
 
 `gcloud container clusters create examplename --region europe-north1 --num-nodes=2`
+
+### Part 2 - Pushing services to dockerhub
+With the files obtained in the prerquisites we need to make some changes before we push them to your dockerhub the fastest way to do this is to create a vm instance and then follow the instuctions
+
+1. pull the prerequisite link using git
+2. open the docker-compose file using vim
+3. replace all instances of alinawazmamdani with your own dockerhub username. The quickest way of doing this is to run the following command 
+
+`:%s/alinawazmamdani/YOUR_USERNAME/g`
